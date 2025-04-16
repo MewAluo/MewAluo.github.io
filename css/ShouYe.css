@@ -365,3 +365,42 @@ nav {
   background-color: black;
   height: 30px;
 }
+
+/* 手机端样式调整 */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+    gap: 5px;
+  }
+  nav a {
+    width: auto;
+    padding: 10px;
+    font-size: 14px;
+  }
+  nav .login {
+    width: auto;
+    padding: 10px;
+  }
+  .title h1 {
+    font-size: 3rem;
+    letter-spacing: 20px;
+  }
+  p {
+    font-size: 12px;
+    width: 90%;
+  }
+  .cta button {
+    width: 200px;
+    font-size: 14px;
+  }
+  .dropdown-content {
+    min-width: 100px;
+  }
+  .dropdown-content a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+    
