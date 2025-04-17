@@ -1,20 +1,25 @@
 // 恐龙数据可继续添加图片，恐龙素材网站：http://www.cdkf.cn/tupian-List-285-2.html
 const dinosaurs = [
-    { name: '剑龙', image: 'http://www.cdkf.cn/uploadfile/20190102151931727.jpg' },
-    { name: '特异龙', image: 'http://www.cdkf.cn/uploadfile/20210402123216413.jpg' },
-    { name: '蛇颈龙', image: 'http://www.cdkf.cn/uploadfile/20210402123626781.jpg' },
-    { name: '三角龙', image: 'http://www.cdkf.cn/uploadfile/20210324161731314.jpg' },
-    { name: '始祖鸟', image: 'http://www.cdkf.cn/uploadfile/20210324162016768.jpg' },
-    { name: '瑞氏幽灵猎龙', image: 'http://www.cdkf.cn/uploadfile/20220222152856524001.jpg' },
-    { name: '鸭嘴龙', image: 'http://www.cdkf.cn/uploadfile/20210409155429644.jpg' },
-    { name: '厚鼻龙宝宝', image: 'http://www.cdkf.cn/uploadfile/20210402124120892.jpg' },
-    { name: '雅库伊赤烈龙', image: 'http://www.cdkf.cn/uploadfile/20220222153153887001.jpg' },
-    { name: '甲龙', image: 'http://www.cdkf.cn/uploadfile/20190102152943850.jpg' },
-    { name: '恐爪龙', image: 'http://www.cdkf.cn/uploadfile/20190124153957130.jpg' },
-    { name: '副龙栉龙', image: 'http://www.cdkf.cn/uploadfile/20210409155719331.jpg' },
-    { name: '镰刀龙', image: 'http://www.cdkf.cn/uploadfile/20181128105451786.jpg' },
-    { name: '牛龙', image: 'http://www.cdkf.cn/uploadfile/201806/20180629134634775.jpg' },
-    { name: '戟龙', image: 'http://www.cdkf.cn/uploadfile/201806/20180628161507206.jpg' }
+    { name: '剑龙', image: './img/恐龙问答游戏/剑龙.jpg' },
+    { name: '特异龙', image: './img/恐龙问答游戏/特异龙.jpg' },
+    { name: '蛇颈龙', image: './img/恐龙问答游戏/蛇颈龙.jpg' },
+    { name: '三角龙', image: './img/恐龙问答游戏/三角龙.jpg' },
+    { name: '始祖鸟', image: './img/恐龙问答游戏/始祖鸟.jpg' },
+    { name: '瑞氏幽灵猎龙', image: './img/恐龙问答游戏/瑞氏幽灵猎龙.jpg' },
+    { name: '鸭嘴龙', image: './img/恐龙问答游戏/鸭嘴龙.jpg' },
+    { name: '厚鼻龙宝宝', image: './img/恐龙问答游戏/厚鼻龙宝宝.jpg' },
+    { name: '雅库伊赤烈龙', image: './img/恐龙问答游戏/雅库伊赤烈龙.jpg' },
+    { name: '甲龙', image: './img/恐龙问答游戏/甲龙.jpg' },
+    { name: '恐爪龙', image: './img/恐龙问答游戏/恐爪龙.jpg' },
+    { name: '副龙栉龙', image: './img/恐龙问答游戏/副龙栉龙.jpg' },
+    { name: '镰刀龙', image: './img/恐龙问答游戏/镰刀龙.jpg' },
+    { name: '牛龙', image: './img/恐龙问答游戏/牛龙.jpg' },
+    { name: '戟龙', image: './img/恐龙问答游戏/戟龙.jpg' },
+    { name: '阿里瓦龙', image: './img/恐龙问答游戏/阿里瓦龙.jpg' },
+    { name: '易门彩云龙', image: './img/恐龙问答游戏/易门彩云龙.jpg' },
+    { name: '安德萨角龙', image: './img/恐龙问答游戏/安德萨角龙.jpg' },
+    { name: '腕龙', image: './img/恐龙问答游戏/腕龙.jpg' },
+    { name: '迅猛龙', image: './img/恐龙问答游戏/迅猛龙.jpg' }
 ];
 
 // 游戏分数
