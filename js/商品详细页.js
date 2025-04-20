@@ -18,48 +18,52 @@ console.log('加入购物车按钮:', cartBtn);
 const quantityInput = document.querySelector('#quantity');
 console.log('数量输入框:', quantityInput);
 
-
 //提示已成功添加到购物车
 document.addEventListener('DOMContentLoaded', function () {
     // 获取加入购物车按钮
     const cartBtn = document.querySelector('.cart-btn');
     // 为加入购物车按钮添加点击事件监听器
     cartBtn.addEventListener('click', function () {
-        alert('已加入购物车');
-    });
-});
+        // 检查用户是否登录
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            alert('请先登录');
+            // 保存当前页面的 URL
+            const currentUrl = window.location.href;
+            localStorage.setItem('redirectUrl', currentUrl);
+            // 跳转到登录页
+            window.location.href = './登录.html';
+        } else {
+            alert('已加入购物车');
+            const productName = document.querySelector('.product-title').textContent;
+            const productPrice = document.querySelector('.price').textContent.replace('¥', '');
 
-if (cartBtn && quantityInput) {
-    cartBtn.addEventListener('click', function () {
-        const productName = document.querySelector('.product-title').textContent;
-        const productPrice = document.querySelector('.price').textContent.replace('¥', '');
+            try {
+                // 获取购物车数据，如果没有则初始化一个空数组
+                let cartItems = JSON.parse(localStorage.getItem('shoppingCart')) || [];
 
-        try {
-            // 获取购物车数据，如果没有则初始化一个空数组
-            let cartItems = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+                // 创建新的商品对象
+                const newItem = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: quantityInput.value
+                };
 
-            // 创建新的商品对象
-            const newItem = {
-                name: productName,
-                price: productPrice,
-                quantity: quantityInput.value
-            };
+                // 将新商品添加到购物车数组中
+                cartItems.push(newItem);
 
-            // 将新商品添加到购物车数组中
-            cartItems.push(newItem);
+                // 将更新后的购物车数据存储到 localStorage 中
+                localStorage.setItem('shoppingCart', JSON.stringify(cartItems));
 
-            // 将更新后的购物车数据存储到 localStorage 中
-            localStorage.setItem('shoppingCart', JSON.stringify(cartItems));
+                // 调试语句，检查数据是否正确存储
+                console.log('购物车数据:', cartItems);
 
-            // 调试语句，检查数据是否正确存储
-            console.log('购物车数据:', cartItems);
-
-            // 可以在这里添加提示信息或跳转到购物车页面的代码
-            // 例如：window.location.href ='shopping-cart.html';
-        } catch (error) {
-            console.error('localStorage 操作出错:', error);
+                // 可以在这里添加提示信息或跳转到购物车页面的代码
+                // 例如：window.location.href ='shopping-cart.html';
+            } catch (error) {
+                console.error('localStorage 操作出错:', error);
+            }
         }
     });
-} else {
-    console.error('无法找到加入购物车按钮或数量输入框');
-}
+});
+    
