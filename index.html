@@ -109,13 +109,14 @@
     //设置点击首页下方按钮后视情况跳转到...页面
     document.addEventListener('DOMContentLoaded', function() {
       const actionButton = document.getElementById('actionButton');
-      actionButton.addEventListener('click', function() {
+      actionButton.addEventListener('click', function(event) {
+        event.preventDefault(); // 阻止默认的跳转行为
         const username = localStorage.getItem('username');
         if(username) {
-          //已登录，跳转到...
+          //已登录，跳转到三叠纪.html
           window.location.href = '三叠纪.html';  
         } else {
-          //未登录，则跳转到...
+          //未登录，则跳转到登录.html
           window.location.href = '登录.html';
         }
       })
@@ -145,5 +146,4 @@
   
 </body>
 
-</html>
-    
+</html>    
