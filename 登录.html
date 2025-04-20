@@ -81,8 +81,19 @@
             if (user) {
                 // 验证通过，将用户名存储到本地存储
                 localStorage.setItem('username', username);
-                // 跳转到首页
-                window.location.href = 'index.html';
+                // 标记用户已登录
+                localStorage.setItem('isLoggedIn', 'true');
+                // 获取之前保存的跳转 URL
+                const redirectUrl = localStorage.getItem('redirectUrl');
+                if (redirectUrl) {
+                    // 跳转到原页面
+                    window.location.href = redirectUrl;
+                    // 清除保存的跳转 URL
+                    localStorage.removeItem('redirectUrl');
+                } else {
+                    // 若没有保存的 URL，则跳转到首页
+                    window.location.href = 'index.html';
+                }
             } else {
                 alert('账号或密码错误');
             }
@@ -90,4 +101,4 @@
     </script>
 </body>
 
-</html>
+</html>    
